@@ -1,10 +1,6 @@
-ingredients = ["egg", "flour", "yeast", "salt", "water"]
-
 def egg():
     how_many = input("How many eggs? ")
     in_grams = float(how_many) * 50
-##    output = str(in_grams) + " grams of egg."
-##    print(output)
     return in_grams
 
 def flour():
@@ -30,27 +26,13 @@ def water():
 
 ask = input("Please list all ingredients: ").strip().lower()
 
-runtime = 0
-for listed in ask:
-    if runtime >= 1: break
-    if ingredients[0] in ask:
-        eggies = egg()
-        print("{} grams of egg.".format(eggies))
-        pass
-    if ingredients[1] in ask:
-        flower = flour()
-        print("{} grams of flour.".format(flower))
-        pass
-    if ingredients[2] in ask:
-        yeet = yeast()
-        print("{} grams of yeast.".format(yeet))
-        pass
-    if ingredients[3] in ask:
-        salty = salt()
-        print("{} grams of salt.".format(salty))
-        pass
-    if ingredients[4] in ask:
-        aqua = water()
-        print("{} grams of water.".format(aqua))
-        pass
-    runtime += 1
+# Map the user input strings directly to the functions that should be called
+ingredient_map = {'egg': egg, 'flour': flour, 'yeast': yeast, 'salt': salt, 'water': water}
+user_ingredients = ask.split()  # give me a list of words
+
+
+# Iterate over the ingredients the user requested
+for ingred in user_ingredients:
+    # Use the word to look up in the map the corresponding function, and call it
+    in_grams = ingredient_map[ingred]()
+    print("{} grams of {}.".format(in_grams, ingred))
