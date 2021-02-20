@@ -6,23 +6,23 @@ import argparse
 
 def yeast(args):
     args.in_grams = args.yeast * 3.1
-    return args.in_grams
+    return ('{0:.2f}'.format(args.in_grams))
 
 def egg(args):
     args.in_grams = args.egg * 50
-    return args.in_grams
+    return ('{0:.2f}'.format(args.in_grams))
 
 def flour(args):
     args.in_grams = args.flour * 136
-    return args.in_grams
+    return ('{0:.2f}'.format(args.in_grams))
 
 def salt(args):
     args.in_grams = args.salt * 5.9
-    return args.in_grams
+    return ('{0:.2f}'.format(args.in_grams))
 
 def water(args):
     args.in_grams = args.water * 236.58
-    return args.in_grams
+    return ('{0:.2f}'.format(args.in_grams))
 
 def main():
     parser = argparse.ArgumentParser(description='Convert common breadmaking measurements into grams.')
