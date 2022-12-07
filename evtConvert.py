@@ -1,12 +1,12 @@
 import sys
-import evtx
+from evtx import EvtxParser
 
 
 def convert_evtx_to_txt(evtx_file, txt_file):
     # Open the EVTX file and create a new TXT file
     with open(evtx_file, "rb") as in_file, open(txt_file, "w") as out_file:
         # Parse the EVTX file
-        for record in evtx.Evtx(in_file).records():
+        for record in EvtxParser(in_file):
             # Extract the XML data from the record
             xml_string = record.xml()
             # Write the XML data to the TXT file
