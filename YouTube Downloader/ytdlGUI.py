@@ -4,8 +4,11 @@ import tkinter as tk
 
 # Function to download and convert the video
 def download_convert_video():
-    # Get the YouTube URL from the entry field
-    url = url_entry.get()
+    # Get the video ID from the entry field
+    video_id = url_entry.get()
+
+    # Build the full YouTube URL
+    url = f"https://www.youtube.com/watch?v={video_id}"
 
     # Create a YouTube object
     yt = pytube.YouTube(url)
@@ -36,7 +39,7 @@ root = tk.Tk()
 root.title("YouTube Downloader")
 
 # Create a label and an entry field for the YouTube URL
-url_label = tk.Label(root, text="Enter the YouTube URL:", font=("Arial", 14))
+url_label = tk.Label(root, text="Enter the YouTube video ID:", font=("Arial", 14))
 url_entry = tk.Entry(root, font=("Arial", 14))
 
 # Create a button to start the download
