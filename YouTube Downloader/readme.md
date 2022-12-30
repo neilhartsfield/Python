@@ -1,7 +1,17 @@
 # YouTube Downloader
 
-This code uses the pytube library to download a YouTube video specified by the user. It first prompts the user to enter the YouTube URL, and then creates a YouTube object using that URL.
+This Python script allows you to download and convert YouTube videos to MP3 format.
 
-Next, it gets the video and audio streams from the YouTube object, and downloads the audio stream to the directory specified by output_dir. The video stream is then converted to MP3 format using the ffmpeg command-line tool, and the temporary MP4 file is deleted.
-
-This code will download the specified YouTube video, extract the audio, and save it in MP3 format to the specified directory. It's worth noting that downloading content from YouTube is generally against the site's terms of service, and you should only do so if you have the necessary rights to the content.
+## Requirements
+* Python 3
+* pytube library
+* ffmpeg command-line tool
+## Usage
+* Enter the YouTube video ID in the entry field.
+* Click the "Download and Convert" button.
+* The video will be downloaded and converted to MP3 format, and saved in the C:\my\mp3 directory.
+## Notes
+* The video will be downloaded in 720p resolution and the audio will be extracted from it.
+* The downloaded audio will be saved in MP4 format with a file name matching the original video title.
+* The script uses the ffmpeg tool to convert the video to MP3 format, so make sure it is installed on your system and available in the PATH.
+* Downloading content from YouTube is generally against the site's terms of service, and you should only do so if you have the necessary rights to the content.
