@@ -14,8 +14,13 @@ def download_convert_video():
     yt = pytube.YouTube(url)
 
     # Get the video and audio stream
-    video_stream = yt.streams.filter(file_extension='mp4', resolution='720p').first()
+    video_stream = yt.streams.filter(file_extension='mp4').first()
     audio_stream = yt.streams.filter(only_audio=True).first()
+
+    # Make sure a valid video stream was found
+    if video_stream is None:
+        print("Error: Invalid video URL or video not available.")
+        return
 
     # Download the audio to the C:\my\mp3 directory
     output_dir = r"C:\my\mp3"
